@@ -1,0 +1,366 @@
+:root {
+  --bg: #0b0d12;
+  --card: #12151d;
+  --muted: #8b90a1;
+  --text: #e6e9f2;
+  --accent: #4f79ff;
+  --border: #1c2130;
+  --success: #19c37d;
+  --danger: #ff5c5c;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--accent), white 15%);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px
+}
+
+.header h1 {
+  margin: 0 0 4px
+}
+
+.header p {
+  margin: 0 0 16px;
+  color: var(--muted)
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.input {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 10px;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+
+.input::placeholder {
+  color: color-mix(in oklab, var(--muted), white 5%)
+}
+
+.input:focus {
+  border-color: color-mix(in oklab, var(--accent), black 10%);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+}
+
+.btn,
+.btn-outline {
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .05s, background .15s, border-color .15s, opacity .15s;
+  user-select: none;
+  will-change: transform;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.btn:hover {
+  filter: brightness(1.05)
+}
+
+.btn:active {
+  transform: translateY(1px)
+}
+
+.btn:disabled {
+  opacity: .6;
+  cursor: not-allowed
+}
+
+.btn-outline {
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: color-mix(in oklab, var(--text), var(--border) 60%)
+}
+
+.btn-outline:active {
+  transform: translateY(1px)
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0 20px
+}
+
+.filters select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.filters select:focus {
+  border-color: color-mix(in oklab, var(--accent), black 10%);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px
+}
+
+@media (min-width: 700px) {
+  .list {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  transition: border-color .15s, transform .06s, box-shadow .15s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: color-mix(in oklab, var(--border), var(--text) 20%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+
+.card:active {
+  transform: translateY(1px)
+}
+
+.card-header {
+  display: flex;
+  gap: 12px;
+  align-items: center
+}
+
+.card-header img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover
+}
+
+.title {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600
+}
+
+.title:hover {
+  text-decoration: underline
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 12px
+}
+
+.desc {
+  margin: 8px 0 0;
+  color: #cfd4e6
+}
+
+.fav {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: #ffd76a;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, transform .06s;
+}
+
+.fav:hover {
+  border-color: color-mix(in oklab, #ffd76a, var(--border) 40%)
+}
+
+.fav:active {
+  transform: translateY(1px)
+}
+
+.fav.active {
+  background: #2a210e;
+}
+
+.loader,
+.error,
+.empty {
+  padding: 12px;
+  text-align: center;
+  color: var(--muted)
+}
+
+.error {
+  color: color-mix(in oklab, var(--danger), white 20%)
+}
+
+.success {
+  color: color-mix(in oklab, var(--success), white 10%)
+}
+
+.favorites {
+  display: grid;
+  gap: 8px
+}
+
+.fav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px
+}
+
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--border), white 5%);
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--border), white 12%);
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copy-btn .icon {
+  flex: 0 0 auto
+}
+
+.copy-label {
+  white-space: nowrap
+}
+
+.copy-url {
+  margin-left: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center-h {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center-v {
+  display: flex;
+  align-items: center;
+}
+
+.flex-end-h {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.header.header--bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-left p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.icon-star {
+  flex: 0 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+}
