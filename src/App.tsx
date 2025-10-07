@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useFavorites } from "./services/favorites";
+import { useFavorites } from "@services/favorites";
 
 export default function App() {
   const { list } = useFavorites();

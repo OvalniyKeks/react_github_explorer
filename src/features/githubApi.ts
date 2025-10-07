@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import getBaseUrl from '../services/config'
+import getBaseUrl from '@services/config'
 
 export type Owner = { login: string; avatar_url: string; html_url: string }
 

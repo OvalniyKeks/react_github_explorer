@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SearchBar from "../components/SearchBar";
-import Filters from "../components/Filters";
-import RepoList from "../components/RepoList";
+import SearchBar from "@components/SearchBar";
+import Filters from "@components/Filters";
+import RepoList from "@components/RepoList";
 
 export default function Home() {
   const [query, setQuery] = useState("TypeScript");

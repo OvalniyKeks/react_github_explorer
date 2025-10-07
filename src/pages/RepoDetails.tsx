@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { Repo } from "../features/githubApi";
+import type { Repo } from "@features/githubApi";
 
-import CopyCloneButton from "../components/CopyCloneButton";
-import Stat from "../components/Stat";
+import CopyCloneButton from "@components/CopyCloneButton";
+import Stat from "@components/Stat";
 
-import getBaseUrl from '../services/config'
+import getBaseUrl from '@services/config'
 
 type Contributor = {
   id: number;

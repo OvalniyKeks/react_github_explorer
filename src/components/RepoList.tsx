@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useSearchReposQuery, type Repo } from "../features/githubApi";
-import RepoCard from "./RepoCard";
+import { useSearchReposQuery, type Repo } from "@features/githubApi";
+import RepoCard from "@components/RepoCard";
 
 type Props = {
   query: string;
