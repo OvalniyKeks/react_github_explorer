@@ -27,12 +27,10 @@
 
 # 1) Установка
 npm i
-
 yarn install
 
 # 2) Dev режим
 npm run dev
-
 yarn dev
 
 # 3) Прод
