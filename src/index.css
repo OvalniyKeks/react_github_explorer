@@ -35,6 +35,7 @@ body {
 }
 
 .container {
+  position: relative;
   max-width: 960px;
   margin: 0 auto;
   padding: 24px
@@ -127,6 +128,12 @@ body {
   margin: 12px 0 20px
 }
 
+@media (max-width: 767px) {
+  .filters {
+    flex-direction: column;
+  }
+}
+
 .filters select {
   padding: 8px 10px;
   border-radius: 8px;
@@ -147,6 +154,13 @@ body {
   gap: 12px
 }
 
+@media (max-width: 767px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (min-width: 700px) {
   .list {
     grid-template-columns: 1fr 1fr
@@ -162,6 +176,12 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+  .card {
+    width: 100%
+  }
+}
+
 .card:hover {
   border-color: color-mix(in oklab, var(--border), var(--text) 20%);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
@@ -175,6 +195,13 @@ body {
   display: flex;
   gap: 12px;
   align-items: center
+}
+
+@media (max-width: 767px) {
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start
+  }
 }
 
 .card-header img {
