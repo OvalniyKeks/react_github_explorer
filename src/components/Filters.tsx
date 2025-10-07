@@ -1,12 +1,12 @@
 import { useId } from "react";
 
-type Props = {
+type PropsFilters = {
   sort: "stars" | "updated";
   order: "desc" | "asc";
   onChange: (s: { sort: "stars" | "updated"; order: "desc" | "asc" }) => void;
 };
 
-export default function Filters({ sort, order, onChange }: Props) {
+export default function Filters({ sort, order, onChange }: PropsFilters) {
   const sortId = useId();
   const orderId = useId();
   return (

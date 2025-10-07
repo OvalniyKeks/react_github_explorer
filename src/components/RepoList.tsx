@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { useSearchReposQuery, type Repo } from "@features/githubApi";
+import { useSearchReposQuery } from "@/features/api";
+import { type Repo } from '@/features/api/types';
 import RepoCard from "@components/RepoCard";
 
-type Props = {
+type PropsRepoList = {
   query: string;
   sort: "stars" | "updated";
   order: "desc" | "asc";
 };
 
-export default function RepoList({ query, sort, order }: Props) {
+export default function RepoList({ query, sort, order }: PropsRepoList) {
   const [page, setPage] = useState(1);
   const per_page = 20;
 

@@ -1,21 +1,11 @@
-export type FavRepo = {
-  id: number
-  full_name: string
-  html_url: string
-  stargazers_count: number
-  owner: { login: string; avatar_url: string }
-}
+import * as React from 'react'
+import type { FavRepo, Snapshot } from './types'
 
 const STORAGE_KEY = 'favorite_repos'
 
 function safeParse<T>(raw: string | null, fallback: T): T {
   try { return raw ? (JSON.parse(raw) as T) : fallback } catch { return fallback }
 }
-
-type Snapshot = Readonly<{
-  list: ReadonlyArray<FavRepo>
-  ids: ReadonlySet<number>
-}>
 
 class FavoritesStore {
   private map: Map<number, FavRepo>
@@ -88,7 +78,6 @@ class FavoritesStore {
 
 export const favoritesStore = new FavoritesStore()
 
-import * as React from 'react'
 export function useFavorites() {
   const snap = React.useSyncExternalStore(
     favoritesStore.subscribe,

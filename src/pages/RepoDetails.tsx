@@ -1,19 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { Repo } from "@features/githubApi";
+import type { Contributor, Repo } from '@/features/api/types';
 
 import CopyCloneButton from "@components/CopyCloneButton";
 import Stat from "@components/Stat";
 
 import getBaseUrl from '@services/config'
-
-type Contributor = {
-  id: number;
-  login: string;
-  avatar_url: string;
-  html_url: string;
-  contributions: number;
-};
 
 export default function RepoDetails() {
   const { owner, name } = useParams<{ owner: string; name: string }>();

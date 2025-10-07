@@ -1,6 +1,6 @@
-import type { Repo } from "@features/githubApi"
+import type { Repo } from '@/features/api/types'
 import { useNavigate } from 'react-router-dom'
-import { useFavorites, setFavorite } from '@services/favorites'
+import { useFavorites, setFavorite } from '@/services/favorites'
 
 export default function RepoCard({ repo }: { repo: Repo }) {
   const nav = useNavigate()

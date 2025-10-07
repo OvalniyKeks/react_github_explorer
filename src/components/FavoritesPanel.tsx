@@ -1,4 +1,4 @@
-import { useFavorites } from '@services/favorites'
+import { useFavorites } from '@/services/favorites'
 
 export default function FavoritesPanel() {
   const { list, clear, remove } = useFavorites()

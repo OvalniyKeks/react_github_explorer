@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-type Props = { onSubmit: (q: string) => void; initial?: string };
-export default function SearchBar({ onSubmit, initial = "react" }: Props) {
+type PropsSearchBar = { onSubmit: (q: string) => void; initial?: string };
+export default function SearchBar({ onSubmit, initial = "react" }: PropsSearchBar) {
   const [q, setQ] = useState(initial);
   return (
     <form
